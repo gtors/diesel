@@ -329,6 +329,6 @@ pub use query_builder::functions::{
 };
 pub use result::Error::NotFound;
 
-pub(crate) mod diesel {
+pub mod diesel {
     pub use super::*;
 }

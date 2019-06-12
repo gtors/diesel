@@ -19,7 +19,7 @@ pub struct Statement {
 }
 
 impl Statement {
-    pub(crate) fn new(stmt: NonNull<ffi::MYSQL_STMT>) -> Self {
+    pub fn new(stmt: NonNull<ffi::MYSQL_STMT>) -> Self {
         Statement {
             stmt: stmt,
             input_binds: None,

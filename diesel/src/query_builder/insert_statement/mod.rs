@@ -1,8 +1,8 @@
 mod column_list;
 mod insert_from_select;
 
-pub(crate) use self::column_list::ColumnList;
-pub(crate) use self::insert_from_select::InsertFromSelect;
+pub use self::column_list::ColumnList;
+pub use self::insert_from_select::InsertFromSelect;
 
 use std::any::*;
 use std::marker::PhantomData;
@@ -39,7 +39,7 @@ pub struct IncompleteInsertStatement<T, Op> {
 }
 
 impl<T, Op> IncompleteInsertStatement<T, Op> {
-    pub(crate) fn new(target: T, operator: Op) -> Self {
+    pub fn new(target: T, operator: Op) -> Self {
         IncompleteInsertStatement { target, operator }
     }
 
@@ -141,7 +141,7 @@ impl<T, U, Op, Ret> InsertStatement<T, U, Op, Ret> {
     }
 
     #[cfg(feature = "postgres")]
-    pub(crate) fn replace_values<F, V>(self, f: F) -> InsertStatement<T, V, Op, Ret>
+    pub fn replace_values<F, V>(self, f: F) -> InsertStatement<T, V, Op, Ret>
     where
         F: FnOnce(U) -> V,
     {
@@ -448,7 +448,7 @@ where
 #[doc(hidden)]
 #[derive(Debug, Clone, Copy)]
 pub struct ValuesClause<T, Tab> {
-    pub(crate) values: T,
+    pub values: T,
     _marker: PhantomData<Tab>,
 }
 
@@ -459,7 +459,7 @@ impl<T: Default, Tab> Default for ValuesClause<T, Tab> {
 }
 
 impl<T, Tab> ValuesClause<T, Tab> {
-    pub(crate) fn new(values: T) -> Self {
+    pub fn new(values: T) -> Self {
         Self {
             values,
             _marker: PhantomData,

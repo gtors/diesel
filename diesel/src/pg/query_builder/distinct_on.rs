@@ -6,7 +6,7 @@ use result::QueryResult;
 
 /// Represents `DISTINCT ON (...)`
 #[derive(Debug, Clone, Copy, QueryId)]
-pub struct DistinctOnClause<T>(pub(crate) T);
+pub struct DistinctOnClause<T>(pub T);
 
 impl<T> QueryFragment<Pg> for DistinctOnClause<T>
 where

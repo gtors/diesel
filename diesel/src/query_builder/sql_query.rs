@@ -24,7 +24,7 @@ pub struct SqlQuery<Inner = ()> {
 }
 
 impl<Inner> SqlQuery<Inner> {
-    pub(crate) fn new(inner: Inner, query: String) -> Self {
+    pub fn new(inner: Inner, query: String) -> Self {
         SqlQuery { inner, query }
     }
 
@@ -204,7 +204,7 @@ pub struct BoxedSqlQuery<'f, DB: Backend, Query> {
 }
 
 impl<'f, DB: Backend, Query> BoxedSqlQuery<'f, DB, Query> {
-    pub(crate) fn new(query: Query) -> Self {
+    pub fn new(query: Query) -> Self {
         BoxedSqlQuery {
             query,
             sql: "".to_string(),

@@ -26,7 +26,7 @@ pub struct TransactionBuilder<'a> {
 }
 
 impl<'a> TransactionBuilder<'a> {
-    pub(crate) fn new(connection: &'a PgConnection) -> Self {
+    pub fn new(connection: &'a PgConnection) -> Self {
         Self {
             connection,
             isolation_level: None,

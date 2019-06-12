@@ -12,7 +12,7 @@ pub struct Subselect<T, ST> {
 }
 
 impl<T, ST> Subselect<T, ST> {
-    pub(crate) fn new(values: T) -> Self {
+    pub fn new(values: T) -> Self {
         Self {
             values,
             _sql_type: PhantomData,

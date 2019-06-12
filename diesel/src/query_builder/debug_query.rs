@@ -21,7 +21,7 @@ pub struct DebugQuery<'a, T: 'a, DB> {
 }
 
 impl<'a, T, DB> DebugQuery<'a, T, DB> {
-    pub(crate) fn new(query: &'a T) -> Self {
+    pub fn new(query: &'a T) -> Self {
         DebugQuery {
             query,
             _marker: PhantomData,

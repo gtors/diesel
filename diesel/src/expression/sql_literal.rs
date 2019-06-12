@@ -242,7 +242,7 @@ impl<Query, Value> UncheckedBind<Query, Value>
 where
     Query: Expression,
 {
-    pub(crate) fn new(query: Query, value: Value) -> Self {
+    pub fn new(query: Query, value: Value) -> Self {
         UncheckedBind { query, value }
     }
 

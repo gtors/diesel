@@ -66,7 +66,7 @@ macro_rules! __diesel_operator_body {
         #[derive(Debug, Clone, Copy, QueryId, DieselNumericOps, NonAggregate)]
         #[doc(hidden)]
         pub struct $name<$($ty_param,)+> {
-            $(pub(crate) $field_name: $ty_param,)+
+            $(pub $field_name: $ty_param,)+
         }
 
         impl<$($ty_param,)+> $name<$($ty_param,)+> {

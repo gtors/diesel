@@ -14,13 +14,13 @@ pub struct OnConflictValues<Values, Target, Action> {
 }
 
 impl<Values> OnConflictValues<Values, NoConflictTarget, DoNothing> {
-    pub(crate) fn do_nothing(values: Values) -> Self {
+    pub fn do_nothing(values: Values) -> Self {
         Self::new(values, NoConflictTarget, DoNothing)
     }
 }
 
 impl<Values, Target, Action> OnConflictValues<Values, Target, Action> {
-    pub(crate) fn new(values: Values, target: Target, action: Action) -> Self {
+    pub fn new(values: Values, target: Target, action: Action) -> Self {
         OnConflictValues {
             values,
             target,

@@ -32,7 +32,7 @@ pub type BoxedDeleteStatement<'a, DB, T, Ret = NoReturningClause> =
     DeleteStatement<T, BoxedWhereClause<'a, DB>, Ret>;
 
 impl<T, U> DeleteStatement<T, U, NoReturningClause> {
-    pub(crate) fn new(table: T, where_clause: U) -> Self {
+    pub fn new(table: T, where_clause: U) -> Self {
         DeleteStatement {
             table: table,
             where_clause: where_clause,

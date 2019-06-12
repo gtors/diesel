@@ -47,15 +47,15 @@ pub struct SelectStatement<
     GroupBy = NoGroupByClause,
     Locking = NoLockingClause,
 > {
-    pub(crate) select: Select,
-    pub(crate) from: From,
-    pub(crate) distinct: Distinct,
-    pub(crate) where_clause: Where,
-    pub(crate) order: Order,
-    pub(crate) limit: Limit,
-    pub(crate) offset: Offset,
-    pub(crate) group_by: GroupBy,
-    pub(crate) locking: Locking,
+    pub select: Select,
+    pub from: From,
+    pub distinct: Distinct,
+    pub where_clause: Where,
+    pub order: Order,
+    pub limit: Limit,
+    pub offset: Offset,
+    pub group_by: GroupBy,
+    pub locking: Locking,
 }
 
 impl<F, S, D, W, O, L, Of, G, LC> SelectStatement<F, S, D, W, O, L, Of, G, LC> {

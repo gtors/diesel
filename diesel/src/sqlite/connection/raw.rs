@@ -12,7 +12,7 @@ use result::*;
 
 #[allow(missing_debug_implementations, missing_copy_implementations)]
 pub struct RawConnection {
-    pub(crate) internal_connection: NonNull<ffi::sqlite3>,
+    pub internal_connection: NonNull<ffi::sqlite3>,
 }
 
 impl RawConnection {

@@ -72,7 +72,7 @@ fn determine_column_type(
     }
 }
 
-pub(crate) fn get_primary_keys(
+pub fn get_primary_keys(
     conn: &InferConnection,
     table: &TableName,
 ) -> Result<Vec<String>, Box<dyn Error>> {

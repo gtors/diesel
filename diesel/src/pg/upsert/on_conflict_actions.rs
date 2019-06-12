@@ -27,7 +27,7 @@ pub struct DoUpdate<T> {
 }
 
 impl<T> DoUpdate<T> {
-    pub(crate) fn new(changeset: T) -> Self {
+    pub fn new(changeset: T) -> Self {
         DoUpdate { changeset }
     }
 }

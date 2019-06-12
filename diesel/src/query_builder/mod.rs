@@ -19,7 +19,7 @@ pub mod functions;
 mod group_by_clause;
 mod insert_statement;
 mod limit_clause;
-pub(crate) mod locking_clause;
+pub mod locking_clause;
 #[doc(hidden)]
 pub mod nodes;
 mod offset_clause;
@@ -48,7 +48,7 @@ pub use self::update_statement::{
     AsChangeset, BoxedUpdateStatement, IntoUpdateTarget, UpdateStatement, UpdateTarget,
 };
 
-pub(crate) use self::insert_statement::ColumnList;
+pub use self::insert_statement::ColumnList;
 
 use std::error::Error;
 

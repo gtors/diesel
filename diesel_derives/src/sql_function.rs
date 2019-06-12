@@ -8,7 +8,7 @@ use util::*;
 
 // Extremely curious why this triggers on a nearly branchless function
 #[allow(clippy::cyclomatic_complexity)]
-pub(crate) fn expand(input: SqlFunctionDecl) -> Result<TokenStream, Diagnostic> {
+pub fn expand(input: SqlFunctionDecl) -> Result<TokenStream, Diagnostic> {
     let SqlFunctionDecl {
         mut attributes,
         fn_token,
@@ -211,7 +211,7 @@ pub(crate) fn expand(input: SqlFunctionDecl) -> Result<TokenStream, Diagnostic> 
 
         #[doc(hidden)]
         #[allow(non_camel_case_types, non_snake_case, unused_imports)]
-        pub(crate) mod #fn_name {
+        pub mod #fn_name {
             #tokens
         }
     };
@@ -219,7 +219,7 @@ pub(crate) fn expand(input: SqlFunctionDecl) -> Result<TokenStream, Diagnostic> 
     Ok(tokens)
 }
 
-pub(crate) struct SqlFunctionDecl {
+pub struct SqlFunctionDecl {
     attributes: Vec<syn::Attribute>,
     fn_token: Token![fn],
     fn_name: syn::Ident,

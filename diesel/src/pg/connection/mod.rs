@@ -181,7 +181,7 @@ impl PgConnection {
         Ok(())
     }
 
-    pub(crate) fn get_metadata_cache(&self) -> &PgMetadataCache {
+    pub fn get_metadata_cache(&self) -> &PgMetadataCache {
         &self.metadata_cache
     }
 }

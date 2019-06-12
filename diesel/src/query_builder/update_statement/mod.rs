@@ -17,7 +17,7 @@ use result::Error::QueryBuilderError;
 use result::QueryResult;
 
 impl<T, U> UpdateStatement<T, U, SetNotCalled> {
-    pub(crate) fn new(target: UpdateTarget<T, U>) -> Self {
+    pub fn new(target: UpdateTarget<T, U>) -> Self {
         UpdateStatement {
             table: target.table,
             where_clause: target.where_clause,

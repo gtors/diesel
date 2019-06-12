@@ -74,7 +74,7 @@ where
     ///
     /// The result will be set to `false` if any method that generates SQL
     /// is called.
-    pub(crate) fn is_noop(result: &'a mut bool) -> Self {
+    pub fn is_noop(result: &'a mut bool) -> Self {
         AstPass {
             internals: AstPassInternals::IsNoop(result),
         }

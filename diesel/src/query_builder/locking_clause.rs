@@ -13,12 +13,12 @@ impl<DB: Backend> QueryFragment<DB> for NoLockingClause {
 
 #[derive(Debug, Clone, Copy, QueryId)]
 pub struct LockingClause<LockMode = ForUpdate, Modifier = NoModifier> {
-    pub(crate) lock_mode: LockMode,
+    pub lock_mode: LockMode,
     modifier: Modifier,
 }
 
 impl<LockMode, Modifier> LockingClause<LockMode, Modifier> {
-    pub(crate) fn new(lock_mode: LockMode, modifier: Modifier) -> Self {
+    pub fn new(lock_mode: LockMode, modifier: Modifier) -> Self {
         LockingClause {
             lock_mode,
             modifier,

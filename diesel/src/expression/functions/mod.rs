@@ -24,7 +24,7 @@
 ///     ...
 /// }
 ///
-/// pub(crate) mod lower {
+/// pub mod lower {
 ///     pub type HelperType<X> = ...;
 /// }
 /// ```

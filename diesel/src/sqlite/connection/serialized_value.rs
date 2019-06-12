@@ -14,7 +14,7 @@ impl SerializedValue {
     // We are always reading potentially misaligned pointers with
     // `ptr::read_unaligned`
     #[allow(clippy::cast_ptr_alignment)]
-    pub(crate) fn bind_to(self, stmt: NonNull<ffi::sqlite3_stmt>, idx: libc::c_int) -> libc::c_int {
+    pub fn bind_to(self, stmt: NonNull<ffi::sqlite3_stmt>, idx: libc::c_int) -> libc::c_int {
         // This unsafe block assumes the following invariants:
         //
         // - `stmt` points to valid memory

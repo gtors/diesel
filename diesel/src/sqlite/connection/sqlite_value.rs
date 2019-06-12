@@ -20,7 +20,7 @@ pub struct SqliteRow {
 
 impl SqliteValue {
     #[allow(clippy::new_ret_no_self)]
-    pub(crate) unsafe fn new<'a>(inner: *mut ffi::sqlite3_value) -> Option<&'a Self> {
+    pub unsafe fn new<'a>(inner: *mut ffi::sqlite3_value) -> Option<&'a Self> {
         (inner as *const _ as *const Self).as_ref().and_then(|v| {
             if v.is_null() {
                 None
@@ -70,7 +70,7 @@ impl SqliteValue {
 }
 
 impl SqliteRow {
-    pub(crate) fn new(inner_statement: NonNull<ffi::sqlite3_stmt>) -> Self {
+    pub fn new(inner_statement: NonNull<ffi::sqlite3_stmt>) -> Self {
         SqliteRow {
             stmt: inner_statement,
             next_col_index: 0,
